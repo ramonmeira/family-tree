@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SVG.js</title>
+  <title>Family Tree</title>
   <meta charset="utf-8">
   <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
   <style type="text/css">
@@ -9,100 +9,10 @@
   	body{margin: 0px;}
   </style>
 </head>
-<body>
+<body onload="draw()">
+	<script type="text/javascript" src="js/svg.js"></script>
 	<script type="text/javascript" src="funcoes.js"></script>
 	<script type="text/javascript" src="elfo.js"></script>
 	<script type="text/javascript" src="arvore.js"></script>
-	<script type="text/javascript">
-		var draw;
-		var width = 1020;
-		var height = 650;
-
-		window.onload = function(){	
-			draw = SVG().addTo('body').size(width, height).fill('#fef');
-			board();
-
-		}		
-
-		function board(){
-			let margem = 25;
-
-			let back = draw.rect(width, height).fill('#def262');
-				
-			let lineUp = draw.line(
-				2*margem, 
-				margem, 
-				width-2*margem, 
-				margem).stroke({width:2,color:'black'});
-
-			let lineBottom = draw.line(
-				2*margem, 
-				height-margem, 
-				width-2*margem, 
-				height-margem).stroke({width:2,color:'black'});
-
-			let lineRight = draw.line(
-				margem, 
-				margem*2, 
-				margem, 
-				height-margem*2).stroke({width:2,color:'black'});
-
-			let lineLeft = draw.line(
-				width-margem, 
-				margem*2, 
-				width-margem, 
-				height-margem*2).stroke({width:2,color:'black'});
-
-			let lineUpLeft1 = draw.line(
-				margem, 
-				margem*3, 
-				margem*3.5, 
-				margem/2).stroke({width:2,color:'black'});
-
-			let lineUpLeft2 = draw.line(
-				margem/2, 
-				margem*4.5, 
-				margem*4, 
-				margem).stroke({width:2,color:'black'});
-
-			let lineUpRight1 = draw.line(
-				width-margem, 
-				margem*3, 
-				width-margem*3.5, 
-				margem/2).stroke({width:2,color:'black'});
-
-			let lineUpRight2 = draw.line(
-				width-margem/2, 
-				margem*4.5, 
-				width-margem*4, 
-				margem).stroke({width:2,color:'black'});
-
-
-			let lineDownLeft1 = draw.line(
-				margem, 
-				height-margem*3, 
-				margem*3.5, 
-				height-margem/2).stroke({width:2,color:'black'});
-
-			let lineDownLeft2 = draw.line(
-				margem/2, 
-				height-margem*4.5, 
-				margem*4, 
-				height-margem).stroke({width:2,color:'black'});
-
-			let lineDownRight1 = draw.line(
-				width-margem, 
-				height-margem*3, 
-				width-margem*3.5, 
-				height-margem/2).stroke({width:2,color:'black'});
-
-			let lineDownRight2 = draw.line(
-				width-margem/2, 
-				height-margem*4.5, 
-				width-margem*4, 
-				height-margem).stroke({width:2,color:'black'});
-		}
-
-	</script>
 </body>
 </html>
