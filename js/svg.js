@@ -4,6 +4,8 @@ var height = 650;
 function draw(){
 	canvas = SVG().addTo('body').size(width, height).fill('#fef');
 	board(canvas);
+	let family = makeFamily(5);
+	console.log(family);
 }
 
 //Draw the backgroud image for the family tree
